@@ -5,7 +5,7 @@ class Database {
     private $db_name = "wa_2025_pl";
     private $username = "root";
     private $password = "";
-    public  $conn;
+    public $conn;
 
     public function getConnection() {
         
@@ -22,10 +22,10 @@ class Database {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             // Výpis informace o úspěšném připojení (pro testování)
-           // echo "Připojení k databázi bylo úspěšné!<br>";
+            // echo "Připojení k databázi bylo úspěšné!<br>";
             
         } catch (PDOException $exception) {
-           // echo "Chyba připojení: " . $exception->getMessage();
+            echo "Chyba připojení: " . $exception->getMessage();
         }
         return $this->conn;
     }
