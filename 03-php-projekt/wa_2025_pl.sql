@@ -1,3 +1,11 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Počítač: 127.0.0.1
+-- Vytvořeno: Čtv 20. bře 2025, 12:13
+-- Verze serveru: 10.4.32-MariaDB
+-- Verze PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -11,6 +19,8 @@ SET time_zone = "+00:00";
 
 --
 -- Databáze: `wa_2025_pl`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -38,8 +48,12 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author`, `category`, `subcategory`, `year`, `price`, `isbn`, `description`, `link`, `images`, `created_at`, `updated_at`) VALUES
-(1, 'aaaa', 'aaaa', '', NULL, 444, 444.00, 'ghgfhfg', '', '', '[]', '2025-03-20 14:38:14', '2025-03-20 14:38:14'),
-(2, 'sdsadasd', 'sadasdasda', '', NULL, 158, 200.00, '1000', '', '', '[]', '2025-03-20 14:41:15', '2025-03-20 14:41:15');
+(1, 'aaa', 'bbb', '', NULL, 2002, 20.00, '1111', '', '', '[]', '2025-03-20 10:54:58', '2025-03-20 10:54:58'),
+(2, 'ccc', 'ccc', '', NULL, 2005, 80.00, '147', '', '', '[]', '2025-03-20 10:55:43', '2025-03-20 10:55:43'),
+(3, 'aaaa', 'aaa', '', NULL, 2000, 200.00, '2000', '', '', '[]', '2025-03-20 11:01:13', '2025-03-20 11:01:13'),
+(4, 'dsdsa', 'sadsadas', '', NULL, 2000, 5555.00, '555', '', '', '[]', '2025-03-20 11:01:29', '2025-03-20 11:01:29'),
+(5, 'fgfdgd', 'fdgdfgdf', '', NULL, 20005, 5.00, '555454', '', '', '[]', '2025-03-20 11:01:48', '2025-03-20 11:01:48'),
+(7, 'ůhhgfh', 'gfhfghgfh', '', NULL, 200, 200.00, '20000', '', '', '[]', '2025-03-20 11:04:59', '2025-03-20 11:04:59');
 
 --
 -- Indexy pro exportované tabulky
@@ -60,7 +74,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT pro tabulku `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
