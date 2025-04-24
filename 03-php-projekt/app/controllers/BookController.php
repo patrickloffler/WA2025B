@@ -1,7 +1,7 @@
 <?php
 require_once '../models/Database.php';
 require_once '../models/Book.php';
-
+session_start();
 class BookController {
     private $db;
     private $bookModel;
@@ -11,9 +11,14 @@ class BookController {
         $this->db = $database->getConnection();
         $this->bookModel = new Book($this->db);
     }
-
     public function createBook() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user_id = $_SESSION['user_id'] ?? null; 
+
+            if (!$user_id) {
+                echo "Uživatel není přihlášen.";
+                exit;
+            }
             $title = htmlspecialchars($_POST['title']);
             $author = htmlspecialchars($_POST['author']);
             $category = htmlspecialchars($_POST['category']);
@@ -39,7 +44,7 @@ class BookController {
             }
 
             // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
-            if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
+            if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths, $user_id)) {
                 header("Location: ../controllers/book_list.php");
                 exit();
             } else {
